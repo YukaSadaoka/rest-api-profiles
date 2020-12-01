@@ -2,9 +2,11 @@ from rest_framework.views import APIView
 from rest_framework.response import Response
 from rest_framework import status
 from rest_framework import viewsets
+from rest_framework.authentication import TokenAuthentication
 
 from profiles import serializers
-
+from profiles import models
+from profiles import permissions
 
 class RandomApiView(APIView):
     """ Test API View """
@@ -88,3 +90,13 @@ class MessageViewSet(viewsets.ViewSet):
     def destroy(self, requst, pk=None):
         """Handle removing a object"""
         return Response({'http_method': 'DELETE'})
+
+
+class UserProfileViewSet(viewsets.ModelViewSet):
+    """Handle creating and updating profiles"""
+    serializer_class = serializers.UserProfileSerializer
+    queryset = models.UserProfile.objects.all()
+
+    # To make authentication_classes as a tuple by adding , in the end
+    authentication_classes = (TokenAuthentication, )
+    permission_classes = (permissions.UpdateOwnProfile, )

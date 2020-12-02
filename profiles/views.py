@@ -18,11 +18,11 @@ class RandomApiView(APIView):
 
     def get(self, request, format=None):
         """Returns a list of APIView features"""
-        an_apiview = [
-            'Uses HTTP methods as function(get, post, patch, put, delete)',
-            'Is similar to a traditional Django View',
-            'Gives you the most control over you application logic',
-            'Is mapped manually to URLs'
+        an_apiview =  [
+            'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. ',
+            'Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat',
+            'Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur',
+            'Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.'
         ]
 
         return Response({'massage': 'Successful!', 'an_apiview': an_apiview})
@@ -60,9 +60,10 @@ class MessageViewSet(viewsets.ViewSet):
     def list(self, request):
         """Return a message"""
         a_viewset = [
-            'Uses actions(list, create, retrieve, update, partial_update)',
-            'Automatically maps URLs using Routers',
-            'Provides more functionality with less code'
+            'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. ',
+            'Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat',
+            'Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur',
+            'Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.'
         ]
         return Response({'message': 'Success', 'a_viewset': a_viewset})
 

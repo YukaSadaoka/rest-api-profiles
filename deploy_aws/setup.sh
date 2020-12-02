@@ -32,7 +32,7 @@ $PROJECT_BASE_PATH/env/bin/python manage.py collectstatic --noinput
 cp $PROJECT_BASE_PATH/deploy_aws/supervisor_profiles_api.conf /etc/supervisor/conf.d/profiles_api.conf
 supervisorctl reread
 supervisorctl update
-supervisorctl restart profiles_api
+supervisorctl restart api_profiles
 
 # Configure nginx
 cp $PROJECT_BASE_PATH/deploy_aws/nginx_profiles_api.conf /etc/nginx/sites-available/profiles_api.conf
